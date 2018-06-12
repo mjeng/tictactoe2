@@ -12,6 +12,9 @@
 		C976F0C020CFA09E00587F33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C976F0BE20CFA09E00587F33 /* Main.storyboard */; };
 		C976F0C220CFA0A100587F33 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C976F0C120CFA0A100587F33 /* Assets.xcassets */; };
 		C976F0C520CFA0A100587F33 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C976F0C320CFA0A100587F33 /* LaunchScreen.storyboard */; };
+		C976F0CD20CFA10900587F33 /* Grid.swift in Sources */ = {isa = PBXBuildFile; fileRef = C976F0CC20CFA10900587F33 /* Grid.swift */; };
+		C976F0CF20CFA1B400587F33 /* GridValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = C976F0CE20CFA1B400587F33 /* GridValue.swift */; };
+		C976F0D120CFA55000587F33 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C976F0D020CFA55000587F33 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +25,9 @@
 		C976F0C120CFA0A100587F33 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C976F0C420CFA0A100587F33 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C976F0C620CFA0A100587F33 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C976F0CC20CFA10900587F33 /* Grid.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Grid.swift; sourceTree = "<group>"; };
+		C976F0CE20CFA1B400587F33 /* GridValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridValue.swift; sourceTree = "<group>"; };
+		C976F0D020CFA55000587F33 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +62,9 @@
 			children = (
 				C976F0BA20CFA09E00587F33 /* AppDelegate.swift */,
 				C976F0BC20CFA09E00587F33 /* ViewController.swift */,
+				C976F0D020CFA55000587F33 /* Game.swift */,
+				C976F0CC20CFA10900587F33 /* Grid.swift */,
+				C976F0CE20CFA1B400587F33 /* GridValue.swift */,
 				C976F0BE20CFA09E00587F33 /* Main.storyboard */,
 				C976F0C120CFA0A100587F33 /* Assets.xcassets */,
 				C976F0C320CFA0A100587F33 /* LaunchScreen.storyboard */,
@@ -136,7 +145,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C976F0BD20CFA09E00587F33 /* ViewController.swift in Sources */,
+				C976F0D120CFA55000587F33 /* Game.swift in Sources */,
 				C976F0BB20CFA09E00587F33 /* AppDelegate.swift in Sources */,
+				C976F0CF20CFA1B400587F33 /* GridValue.swift in Sources */,
+				C976F0CD20CFA10900587F33 /* Grid.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +293,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54D6R8C734;
 				INFOPLIST_FILE = tictactoe2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -298,6 +311,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 54D6R8C734;
 				INFOPLIST_FILE = tictactoe2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
