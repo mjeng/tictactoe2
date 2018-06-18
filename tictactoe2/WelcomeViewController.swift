@@ -30,17 +30,17 @@ class ViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         
-        let animationDuration = 5.0
-        print("before")
-        UIView.animateKeyframes(withDuration: animationDuration, delay: 0.0, options: .calculationModeLinear, animations: {
+        let animationDuration = 4.0
+        
+        UIView.animateKeyframes(withDuration: animationDuration, delay: 0.0, options: .calculationModeCubic, animations: {
             
             UIView.addKeyframe(withRelativeStartTime: 0.0, relativeDuration: 0.2, animations: {
                 self.logoView?.alpha = 1.0
             })
-            UIView.addKeyframe(withRelativeStartTime: 0.4, relativeDuration: 0.2, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.5, relativeDuration: 0.3, animations: {
                 self.logoView?.alpha = 0.0
             })
-            UIView.addKeyframe(withRelativeStartTime: 0.6, relativeDuration: 0.4, animations: {
+            UIView.addKeyframe(withRelativeStartTime: 0.8, relativeDuration: 0.2, animations: {
                 self.startButton.alpha = 1.0
             })
         }, completion: { Bool in
@@ -52,7 +52,7 @@ class ViewController: UIViewController {
     
     func loadLogo() {
         let image = UIImage(named: "app-logo")
-        logoView = UIImageView(image: image)
+        self.logoView = UIImageView(image: image)
         let imageWidth = image!.size.width
         let imageHeight = image!.size.height
         let newWidth = screenWidth * 0.8

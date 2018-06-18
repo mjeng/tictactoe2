@@ -1,4 +1,4 @@
-//
+///Users/owner/eecs/personal-projects/tictactoe2/tictactoe2.xcodeproj
 //  GameViewController.swift
 //  tictactoe2
 //
@@ -10,23 +10,37 @@ import UIKit
 
 class GameViewController: UIViewController {
 
+    public var screenWidth: CGFloat {
+        return UIScreen.main.bounds.width
+    }
+    public var screenHeight: CGFloat {
+        return UIScreen.main.bounds.height
+    }
+    var gridView: GridView?
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        loadGrid()
-        createButtons()
+        let viewWidth = screenWidth * 0.9
+        let viewHeight = viewWidth
+        let gridFrame = CGRect(x: (screenWidth-viewWidth)/2, y: (screenHeight-viewHeight)/2, width: viewWidth, height: viewHeight)
+        gridView = GridView(frame: gridFrame)
+        gridView?.alpha = 0.0
+        view.addSubview(gridView!)
     }
     
-    func loadGrid() -> () {
-        let gridImage = UIImage(named: "grid")
-        let gridView = UIImageView(image: gridImage)
-        view.addSubview(gridView)
-    }
 
-    func createButtons() -> () {
-        
+
+    
+    override func viewDidAppear(_ animated: Bool) {
+        UIView.animate(withDuration: 0.2) {
+            self.gridView?.alpha = 1.0
+        }
     }
+    
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
