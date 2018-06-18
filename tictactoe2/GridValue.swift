@@ -7,9 +7,9 @@
 //
 
 import Foundation
+import UIKit
 
-enum GridValue {
-    case x
-    case o
-    case empty
+struct GridValue {
+    let value: Int
+    let image: UIImage?
 }

@@ -10,15 +10,11 @@ import Foundation
 
 class Game {
     
-    init() {
-        
-    }
+    static let empty = GridValue(value: 0, image: nil)
+    static let x = GridValue(value: 1, image: nil)
+    static let y = GridValue(value: -1, image: nil)
     
-    func run() {
-        let grid = Grid()
-        // display start button
-        // go to grid view
-        // display play again button
-    }
+    
+    
     
 }

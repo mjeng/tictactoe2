@@ -12,10 +12,11 @@ class Grid {
     
     let xdim = 3
     let ydim = 3
-    let grid: [[GridValue]]
+    let grid: [[GridValue]]?
     
     init() {
-        grid = Array(repeating: Array(repeating: GridValue.empty, count: xdim), count: ydim)
+//        grid = Array(repeating: Array(repeating: Game.empty, count: xdim), count: ydim)
+        grid = nil
     }
     
     func insertGridValue(_ value: GridValue, at position: (Int, Int)) {
