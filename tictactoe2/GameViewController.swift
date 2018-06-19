@@ -76,23 +76,23 @@ class GameViewController: UIViewController, ClickDelegate, GameDelegate {
     }
     
     func declareWinner(_ winner: Player) {
+        wrapUp()
+        
         switch winner {
         case .x:
             statusLabel.text = "X is the winner!"
         case .o:
             statusLabel.text = "O is the winner!"
         }
-        
-        wrapUp()
-        
     }
     
     func declareTie() {
-        statusLabel.text = "Bummer, it's a tie!"
         wrapUp()
+        statusLabel.text = "Bummer, it's a tie!"
     }
     
     func wrapUp() {
+        gridView.isUserInteractionEnabled = false
         // Make play again button available
         playAgainButton.isEnabled = true
         UIView.animate(withDuration: 0.2) {

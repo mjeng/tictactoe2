@@ -64,8 +64,8 @@
 			children = (
 				C976F0BA20CFA09E00587F33 /* AppDelegate.swift */,
 				C976F0BC20CFA09E00587F33 /* WelcomeViewController.swift */,
-				C99D034620D89E040003E020 /* Game.swift */,
 				C99D033A20D73EAA0003E020 /* GameViewController.swift */,
+				C99D034620D89E040003E020 /* Game.swift */,
 				C99D033E20D75CA30003E020 /* GridView.swift */,
 				C99D034020D76A890003E020 /* GridSquare.swift */,
 				C976F0BE20CFA09E00587F33 /* Main.storyboard */,

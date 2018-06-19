@@ -84,6 +84,7 @@ class GridView: UIImageView {
     
     @objc func userPressed(button: GridSquare!) {
         clickDelegate.userPressed(button: button)
+        button.isUserInteractionEnabled = false
     }
     
     func changeButtonImage(for button: GridSquare, using image: UIImage?) {
