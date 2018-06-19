@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, ClickDelegate, GameDelegate {
 
     public var screenWidth: CGFloat {
         return UIScreen.main.bounds.width
@@ -16,38 +16,84 @@ class GameViewController: UIViewController {
     public var screenHeight: CGFloat {
         return UIScreen.main.bounds.height
     }
-    var gridView: GridView?
+    var gridView: GridView!
+    var game: Game!
+    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var playAgainButton: UIButton!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        game = Game(gameDelegate: self)
         let viewWidth = screenWidth * 0.9
         let viewHeight = viewWidth
         let gridFrame = CGRect(x: (screenWidth-viewWidth)/2, y: (screenHeight-viewHeight)/2, width: viewWidth, height: viewHeight)
-        gridView = GridView(frame: gridFrame)
-        gridView?.alpha = 0.0
+        gridView = GridView(frame: gridFrame, clickDelegate: self)
+        gridView.alpha = 0.0
+        gridView.isUserInteractionEnabled = true
+        statusLabel.text = "X goes first!"
+        statusLabel.alpha = 0.0
+        playAgainButton.alpha = 0.0
+        playAgainButton.isEnabled = false
         view.addSubview(gridView!)
     }
     
-
-
+//    func makeView() {
+//
+//    }
     
     override func viewDidAppear(_ animated: Bool) {
         UIView.animate(withDuration: 0.2) {
-            self.gridView?.alpha = 1.0
+            self.gridView.alpha = 1.0
+        }
+        UIView.animate(withDuration: 0.2) {
+            self.statusLabel.alpha = 1.0
+        }
+        
+    }
+
+    func userPressed(button: GridSquare) {
+        let currentPlayer = game.getCurrentPlayer()
+        let image: UIImage?
+        
+        switch currentPlayer {
+        case .x:
+            image = UIImage(named: "x")
+            statusLabel.text = "O"
+        case .o:
+            image = UIImage(named: "o")
+            statusLabel.text = "X"
+        }
+        
+        gridView.changeButtonImage(for: button, using: image)
+        
+        game.userPressed(button: button)
+
+    }
+    
+    func declareWinner(_ winner: Player) {
+        switch winner {
+        case .x:
+            statusLabel.text = "X is the winner!"
+        case .o:
+            statusLabel.text = "O is the winner!"
+        }
+        
+        // Make play again button available
+        playAgainButton.isEnabled = true
+        UIView.animate(withDuration: 0.2) {
+            self.playAgainButton.alpha = 1.0
         }
     }
-    
 
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func playAgain(_ sender: Any) {
+        print("let's play again!")
     }
     
-
+    
+    
     /*
     // MARK: - Navigation
 

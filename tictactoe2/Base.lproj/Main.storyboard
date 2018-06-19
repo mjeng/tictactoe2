@@ -19,8 +19,8 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q04-Xq-hZm">
-                                <rect key="frame" x="89" y="308" width="195" height="50"/>
-                                <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="30"/>
+                                <rect key="frame" x="81" y="298.5" width="211" height="69"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Light" family="Chalkboard SE" pointSize="40"/>
                                 <state key="normal" title="Start Game">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -51,23 +51,36 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9W-Lk-42t">
-                                <rect key="frame" x="114" y="551" width="161" height="52"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="33"/>
-                                <state key="normal" title="Play again?"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m9W-Lk-42t">
+                                <rect key="frame" x="111" y="548" width="153" height="55"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="30"/>
+                                <state key="normal" title="Play again?">
+                                    <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="playAgain:" destination="XBf-YW-IWm" eventType="touchUpInside" id="yYL-UW-rYM"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PBu-IY-W0N">
-                                <rect key="frame" x="309" y="531" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dvc-ov-Z6f">
+                                <rect key="frame" x="74.5" y="70" width="225" height="56"/>
+                                <fontDescription key="fontDescription" name="KohinoorTelugu-Regular" family="Kohinoor Telugu" pointSize="40"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="8cV-az-IF1" firstAttribute="bottom" secondItem="m9W-Lk-42t" secondAttribute="bottom" constant="64" id="4md-aM-K7K"/>
+                            <constraint firstItem="dvc-ov-Z6f" firstAttribute="top" secondItem="8cV-az-IF1" secondAttribute="top" constant="50" id="OV4-Qs-3ke"/>
+                            <constraint firstItem="m9W-Lk-42t" firstAttribute="centerX" secondItem="t01-qi-DWW" secondAttribute="centerX" id="pUw-ee-0iI"/>
+                            <constraint firstItem="dvc-ov-Z6f" firstAttribute="centerX" secondItem="t01-qi-DWW" secondAttribute="centerX" id="xmv-kc-f87"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="8cV-az-IF1"/>
                     </view>
+                    <connections>
+                        <outlet property="playAgainButton" destination="m9W-Lk-42t" id="iJ4-8J-2cF"/>
+                        <outlet property="statusLabel" destination="dvc-ov-Z6f" id="s3e-Rw-pcz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AnC-kC-dWZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

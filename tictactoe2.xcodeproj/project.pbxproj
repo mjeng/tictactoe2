@@ -15,6 +15,7 @@
 		C99D033B20D73EAA0003E020 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D033A20D73EAA0003E020 /* GameViewController.swift */; };
 		C99D033F20D75CA30003E020 /* GridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D033E20D75CA30003E020 /* GridView.swift */; };
 		C99D034120D76A890003E020 /* GridSquare.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D034020D76A890003E020 /* GridSquare.swift */; };
+		C99D034720D89E040003E020 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99D034620D89E040003E020 /* Game.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C99D033A20D73EAA0003E020 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		C99D033E20D75CA30003E020 /* GridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridView.swift; sourceTree = "<group>"; };
 		C99D034020D76A890003E020 /* GridSquare.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridSquare.swift; sourceTree = "<group>"; };
+		C99D034620D89E040003E020 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,12 +64,13 @@
 			children = (
 				C976F0BA20CFA09E00587F33 /* AppDelegate.swift */,
 				C976F0BC20CFA09E00587F33 /* WelcomeViewController.swift */,
+				C99D034620D89E040003E020 /* Game.swift */,
 				C99D033A20D73EAA0003E020 /* GameViewController.swift */,
 				C99D033E20D75CA30003E020 /* GridView.swift */,
 				C99D034020D76A890003E020 /* GridSquare.swift */,
 				C976F0BE20CFA09E00587F33 /* Main.storyboard */,
-				C976F0C120CFA0A100587F33 /* Assets.xcassets */,
 				C976F0C320CFA0A100587F33 /* LaunchScreen.storyboard */,
+				C976F0C120CFA0A100587F33 /* Assets.xcassets */,
 				C976F0C620CFA0A100587F33 /* Info.plist */,
 			);
 			path = tictactoe2;
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C976F0BD20CFA09E00587F33 /* WelcomeViewController.swift in Sources */,
+				C99D034720D89E040003E020 /* Game.swift in Sources */,
 				C99D033F20D75CA30003E020 /* GridView.swift in Sources */,
 				C976F0BB20CFA09E00587F33 /* AppDelegate.swift in Sources */,
 				C99D033B20D73EAA0003E020 /* GameViewController.swift in Sources */,

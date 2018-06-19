@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ClickDelegate: class {
+    func userPressed(button: GridSquare)
+}
+
 class GridView: UIImageView {
 
     /*
@@ -25,13 +29,10 @@ class GridView: UIImageView {
     let xdim = 3
     let ydim = 3
     var grid: [[GridSquare?]] = [[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]]
+    let clickDelegate: ClickDelegate
 
-    override init(frame: CGRect) {
-//        for i in 0..<xdim {
-//            for j in 0..<ydim {
-//                self.grid[i][j] = nil
-//            }
-//        }
+    init(frame: CGRect, clickDelegate: ClickDelegate) {
+        self.clickDelegate = clickDelegate
         super.init(frame: frame)
         loadGrid()
         createButtons()
@@ -55,9 +56,15 @@ class GridView: UIImageView {
     
     func createButtons() -> () { // NOTE this function was made assuming the UIView and image sizes were identical
         
+        let transformVals: (CGFloat, CGFloat) = (6.0, 0.9)
+        let translate = CGAffineTransform(translationX: transformVals.0, y: transformVals.0)
+        let scale = CGAffineTransform(scaleX: transformVals.1, y: transformVals.1)
+        
         let buttonWidth = frame.width/3
         let buttonHeight = frame.height/3
-        let buttonSize = CGSize(width: buttonWidth, height: buttonHeight)
+        
+        let buttonSize = CGSize(width: buttonWidth, height: buttonHeight).applying(scale)
+        
         
         for i in 0..<xdim {
             for j in 0..<ydim {
@@ -65,15 +72,32 @@ class GridView: UIImageView {
                 let y: CGFloat = frame.height/3 * CGFloat(j)
                 let buttonOrigin = CGPoint(x: x, y: y)
                 
-                let buttonFrame = CGRect(origin: buttonOrigin, size: buttonSize)
-                let button = GridSquare(frame: buttonFrame)
+                let buttonFrame = CGRect(origin: buttonOrigin.applying(translate), size: buttonSize)
+                let button = GridSquare(frame: buttonFrame, pos: (i, j))
                 
+                button.addTarget(self, action: #selector(userPressed(button:)), for: .touchUpInside)
+                print(button.isEnabled)
+                print(button.allTargets)
                 grid[i][j] = button
                 self.addSubview(button)
             }
         }
+        
+    }
+    
+    @objc func userPressed(button: GridSquare!) {
+        clickDelegate.userPressed(button: button)
+    }
+    
+    func changeButtonImage(for button: GridSquare, using image: UIImage?) {
+        button.setImage(image, for: .normal)
     }
     
     
 
+}
+
+enum StatusLabel: String {
+    case x = "X"
+    case o = "O"
 }
