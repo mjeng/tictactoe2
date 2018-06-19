@@ -61,12 +61,15 @@ class Game {
     
     func checkWinner() {
         
-        func checkSum(sum: Int, dim: Int) {
+        func checkSum(sum: Int, dim: Int) -> Bool {
             if sum == xdim {
                 declareWinner(.x)
             } else if sum == -xdim {
                 declareWinner(.o)
+            } else {
+                return false
             }
+            return true
         }
         
         var rowSum: Int
@@ -75,7 +78,9 @@ class Game {
             for j in 0..<ydim {
                 rowSum += gridValues[i][j].rawValue
             }
-            checkSum(sum: rowSum, dim: xdim)
+            if checkSum(sum: rowSum, dim: xdim) {
+                return
+            }
         }
         
         var colSum: Int
@@ -84,7 +89,9 @@ class Game {
             for i in 0..<xdim {
                 colSum += gridValues[i][j].rawValue
             }
-            checkSum(sum: colSum, dim: ydim)
+            if checkSum(sum: colSum, dim: ydim) {
+                return
+            }
         }
         
         
@@ -96,11 +103,13 @@ class Game {
             diag1Sum += gridValues[i][i].rawValue
             diag2Sum += gridValues[i][dim-i-1].rawValue
         }
-        checkSum(sum: diag1Sum, dim: dim)
-        checkSum(sum: diag2Sum, dim: dim)
+        if checkSum(sum: diag1Sum, dim: dim) || checkSum(sum: diag2Sum, dim: dim) {
+            return
+        }
         
         if turnNumber == 9 {
             declareTie()
+            return
         }
         
     }
