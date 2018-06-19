@@ -28,7 +28,6 @@ class GridView: UIImageView {
     
     let xdim = 3
     let ydim = 3
-    var grid: [[GridSquare?]] = [[nil, nil, nil], [nil, nil, nil], [nil, nil, nil]]
     let clickDelegate: ClickDelegate
 
     init(frame: CGRect, clickDelegate: ClickDelegate) {
@@ -76,9 +75,7 @@ class GridView: UIImageView {
                 let button = GridSquare(frame: buttonFrame, pos: (i, j))
                 
                 button.addTarget(self, action: #selector(userPressed(button:)), for: .touchUpInside)
-                print(button.isEnabled)
-                print(button.allTargets)
-                grid[i][j] = button
+
                 self.addSubview(button)
             }
         }

@@ -33,9 +33,7 @@ class Game {
     init(gameDelegate: GameDelegate) {
         self.gridValues = Array<[GridValue]>(repeating: Array<GridValue>(repeating: .na, count: xdim), count: ydim)
         self.currentPlayer = .x // x always starts
-        self.gameDelegate = gameDelegate
-        print(gridValues)
-        
+        self.gameDelegate = gameDelegate        
     }
     
     func getCurrentPlayer() -> Player {
