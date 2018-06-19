@@ -69,8 +69,8 @@
 				C99D033E20D75CA30003E020 /* GridView.swift */,
 				C99D034020D76A890003E020 /* GridSquare.swift */,
 				C976F0BE20CFA09E00587F33 /* Main.storyboard */,
-				C976F0C320CFA0A100587F33 /* LaunchScreen.storyboard */,
 				C976F0C120CFA0A100587F33 /* Assets.xcassets */,
+				C976F0C320CFA0A100587F33 /* LaunchScreen.storyboard */,
 				C976F0C620CFA0A100587F33 /* Info.plist */,
 			);
 			path = tictactoe2;
@@ -299,6 +299,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54D6R8C734;
 				INFOPLIST_FILE = tictactoe2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -317,6 +318,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 54D6R8C734;
 				INFOPLIST_FILE = tictactoe2/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
