@@ -24,7 +24,6 @@ class GameViewController: UIViewController, ClickDelegate, GameDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         createGame()
     }

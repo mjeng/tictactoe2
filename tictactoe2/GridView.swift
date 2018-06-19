@@ -90,11 +90,5 @@ class GridView: UIImageView {
         button.setImage(image, for: .normal)
     }
     
-    
 
-}
-
-enum StatusLabel: String {
-    case x = "X"
-    case o = "O"
 }
