@@ -26,6 +26,10 @@ class GameViewController: UIViewController, ClickDelegate, GameDelegate {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        createGame()
+    }
+    
+    func createGame() {
         game = Game(gameDelegate: self)
         let viewWidth = screenWidth * 0.9
         let viewHeight = viewWidth
@@ -40,18 +44,17 @@ class GameViewController: UIViewController, ClickDelegate, GameDelegate {
         view.addSubview(gridView!)
     }
     
-//    func makeView() {
-//
-//    }
-    
     override func viewDidAppear(_ animated: Bool) {
+        animateGameStart()
+    }
+    
+    func animateGameStart() {
         UIView.animate(withDuration: 0.2) {
             self.gridView.alpha = 1.0
         }
         UIView.animate(withDuration: 0.2) {
             self.statusLabel.alpha = 1.0
         }
-        
     }
 
     func userPressed(button: GridSquare) {
@@ -89,7 +92,9 @@ class GameViewController: UIViewController, ClickDelegate, GameDelegate {
     }
 
     @IBAction func playAgain(_ sender: Any) {
-        print("let's play again!")
+        gridView.removeFromSuperview()
+        createGame()
+        animateGameStart()
     }
     
     
