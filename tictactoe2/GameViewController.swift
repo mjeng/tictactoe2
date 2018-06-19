@@ -83,6 +83,16 @@ class GameViewController: UIViewController, ClickDelegate, GameDelegate {
             statusLabel.text = "O is the winner!"
         }
         
+        wrapUp()
+        
+    }
+    
+    func declareTie() {
+        statusLabel.text = "Bummer, it's a tie!"
+        wrapUp()
+    }
+    
+    func wrapUp() {
         // Make play again button available
         playAgainButton.isEnabled = true
         UIView.animate(withDuration: 0.2) {

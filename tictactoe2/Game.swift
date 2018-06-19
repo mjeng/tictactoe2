@@ -10,6 +10,7 @@ import Foundation
 
 protocol GameDelegate: class {
     func declareWinner(_ winner: Player)
+    func declareTie()
 }
 
 enum Player {
@@ -29,6 +30,7 @@ class Game {
     var gridValues: [[GridValue]]!
     var currentPlayer: Player
     var gameDelegate: GameDelegate
+    var turnNumber = 0
     
     init(gameDelegate: GameDelegate) {
         self.gridValues = Array<[GridValue]>(repeating: Array<GridValue>(repeating: .na, count: xdim), count: ydim)
@@ -41,6 +43,9 @@ class Game {
     }
     
     func userPressed(button: GridSquare) {
+        
+        turnNumber += 1
+        
         let pos = button.pos
         switch currentPlayer {
         case .x:
@@ -94,12 +99,19 @@ class Game {
         checkSum(sum: diag1Sum, dim: dim)
         checkSum(sum: diag2Sum, dim: dim)
         
+        if turnNumber == 9 {
+            declareTie()
+        }
+        
     }
     
     func declareWinner(_ winner: Player) {
         gameDelegate.declareWinner(winner)
     }
     
+    func declareTie() {
+        gameDelegate.declareTie()
+    }
     
     
 }
